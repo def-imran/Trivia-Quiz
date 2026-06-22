@@ -64,7 +64,8 @@ function generateQuestion() {
     buttons.forEach(function (button) {
         button.addEventListener("click", () => {
             checkAnswer(button, answer);
-            disabledButtons(button)
+            disabledButtons(button);
+            addScore(button, answer);
         });
 
     });
@@ -93,11 +94,18 @@ function checkAnswer(button, answer) {
 
 function disabledButtons(button) {
     const buttons = document.querySelectorAll(".btn");
-    buttons.forEach(function(allButtons){
-        if (button != allButtons){
-            allButtons.disabled=true;
+    buttons.forEach(function (allButtons) {
+        if (button != allButtons) {
+            allButtons.disabled = true;
         }
     })
+}
+
+function addScore(button, answer) {
+    if (button.innerText === answer) {
+        rightAnswers.push(button.innerText);
+    }
+    console.log(rightAnswers);
 }
 
 
