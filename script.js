@@ -38,6 +38,10 @@ const quizContainer = document.getElementById("quiz-container");
 const quizQuestion = document.getElementById("question-titel");
 
 const quizQuestions = [...questions]
+const rightAnswers = [];
+
+startButton.addEventListener("click", generateQuestion);
+nextButton.addEventListener("click", generateQuestion);
 
 function generateQuestion() {
     const randomIndex = Math.floor(Math.random() * quizQuestions.length);
@@ -55,6 +59,11 @@ function generateQuestion() {
         <button class="btn">${options[3]}</button
     `
 
+    const buttons = document.querySelectorAll(".btn");
+    buttons.forEach(function(button){
+        buttons.addEventListener("click", checkAnswer(button));
+    });
+
     if (quizQuestions.length === 0){
         nextButton.innerText = "End Quiz"
     }
@@ -63,7 +72,10 @@ function generateQuestion() {
     quizContainer.style.display = "block";
 }
 
-startButton.addEventListener("click", generateQuestion);
-nextButton.addEventListener("click", generateQuestion);
+
+function checkAnswer(button){
+    
+}
+
 
 
