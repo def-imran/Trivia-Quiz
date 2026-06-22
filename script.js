@@ -32,7 +32,11 @@ const questions = [
 
 
 const startButton = document.getElementById("start-btn");
+const nextButton = document.getElementById("next-btn");
+const quizButtons = document.getElementById("quiz-buttons-div");
 const quizContainer = document.getElementById("quiz-container");
+const quizQuestion = document.getElementById("question-titel");
+
 const quizQuestions = [...questions]
 
 function generateQuestion() {
@@ -43,22 +47,18 @@ function generateQuestion() {
     const answer = randomQuestion.answer;
     console.log(question, options, answer);
 
-    quizContainer.innerHTML = ` 
-    
-        <h1 class="question-titel">${question}</h1>
-        <div class="quiz-buttons-div">
-            <button class="btn">${options[0]}</button>
-            <button class="btn">${options[1]}</button>
-            <button class="btn">${options[2]}</button>
-            <button class="btn">${options[3]}</button>
-       
-            <div class="next-btn-div">
-            <button class="next-btn" id="next-btn">Next Question</button>
-        </div>
+    quizQuestion.innerText = `${question}`;
+    quizButtons.innerHTML = ` 
+        <button class="btn">${options[0]}</button>
+        <button class="btn">${options[1]}</button>
+        <button class="btn">${options[2]}</button>
+        <button class="btn">${options[3]}</button
     `
     startButton.style.display = "none";
-    
+    quizContainer.style.display = "block";
 }
 
+startButton.addEventListener("click", generateQuestion);
+nextButton.addEventListener("click", generateQuestion);
 
-generateQuestion();
+
