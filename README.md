@@ -6,10 +6,10 @@ An interactive web application that displays trivia questions dynamically and ev
 
 ### 🎯 Project Purpose
 
-This project was built for my portfolio to integrate and test my knowledge from my previous three applications:
-* **[Salary Calculator App](../Salary-calculator)** 
-* **[Number Filter App](../Number-Filter)** 
-* **[Random Generator App](../Random-Generator)** 
+This project was built for my portfolio to integrate and test my knowledge from my previous three mini-projects:
+* **[Salary Calculator](https://github.com/def-imran/Salary-calculator)** 
+* **[Number Filter](https://github.com/def-imran/Number-Filter)** 
+* **[Random Quote Generator](https://github.com/def-imran/Random-Generator)** 
 
  I used AI and online resources strictly as learning tools to understand concepts, ask questions, and refine my logic—not to generate the code for me. I fully understand every line of code written in this repository.
 
