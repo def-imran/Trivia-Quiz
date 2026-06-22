@@ -60,11 +60,15 @@ function generateQuestion() {
     `
 
     const buttons = document.querySelectorAll(".btn");
-    buttons.forEach(function(button){
-        button.addEventListener("click", () => checkAnswer(button, answer));
+    buttons.forEach(function (button) {
+        button.addEventListener("click", () => {
+            checkAnswer(button, answer);
+            disabledButtons(button)
+        });
+
     });
 
-    if (quizQuestions.length === 0){
+    if (quizQuestions.length === 0) {
         nextButton.innerText = "End Quiz"
     }
 
@@ -73,16 +77,21 @@ function generateQuestion() {
 }
 
 
-function checkAnswer(button, answer){
-    if (button.innerText === answer){
+function checkAnswer(button, answer) {
+    if (button.innerText === answer) {
         button.style.backgroundColor = "green"
         button.style.color = "white"
     }
 
-    else{
+    else {
         button.style.backgroundColor = "red"
         button.style.color = "white"
     }
+}
+
+
+function disabledButtons(button) {
+    
 }
 
 
