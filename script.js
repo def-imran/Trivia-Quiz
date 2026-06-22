@@ -37,6 +37,7 @@ const quizButtons = document.getElementById("quiz-buttons-div");
 const quizContainer = document.getElementById("quiz-container");
 const quizQuestion = document.getElementById("question-titel");
 
+
 const quizQuestions = [...questions]
 const rightAnswers = [];
 
@@ -91,7 +92,12 @@ function checkAnswer(button, answer) {
 
 
 function disabledButtons(button) {
-    
+    const buttons = document.querySelectorAll(".btn");
+    buttons.forEach(function(allButtons){
+        if (button != allButtons){
+            allButtons.disabled=true;
+        }
+    })
 }
 
 
