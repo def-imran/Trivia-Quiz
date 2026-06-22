@@ -33,11 +33,11 @@ const questions = [
 
 const startButton = document.getElementById("start-btn");
 const quizContainer = document.getElementById("quiz-container");
+const quizQuestions = [...questions]
 
-
-function generateQuestion(){
+function generateQuestion() {
     const randomIndex = Math.floor(Math.random() * questions.length);
-    const randomQuestion = questions[randomIndex];
+    const randomQuestion = quizQuestions.splice(randomIndex, 1)[0];
     const question = randomQuestion.question;
     const options = randomQuestion.options;
     const answer = randomQuestion.answer;
@@ -56,7 +56,9 @@ function generateQuestion(){
             <button class="next-btn" id="next-btn">Next Question</button>
         </div>
     `
-
+    startButton.style.display = "none";
+    
 }
+
 
 generateQuestion();

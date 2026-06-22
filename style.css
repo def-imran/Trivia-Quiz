@@ -100,7 +100,8 @@ body {
 }
 
 .question-titel {
-    margin-bottom: 25px;
+    margin-bottom: 20px;
+    font-size: 25px;
 }
 
 .next-btn:hover {
