@@ -36,6 +36,7 @@ const nextButton = document.getElementById("next-btn");
 const quizButtons = document.getElementById("quiz-buttons-div");
 const quizContainer = document.getElementById("quiz-container");
 const quizQuestion = document.getElementById("question-titel");
+const endContainer = document.getElementById("end");
 
 
 const quizQuestions = [...questions]
@@ -72,6 +73,11 @@ function generateQuestion() {
 
     if (quizQuestions.length === 0) {
         nextButton.innerText = "End Quiz"
+        if (nextButton.innerText === "End Quiz"){
+            nextButton.addEventListener("click", () =>{
+
+            })
+        }
     }
 
     startButton.style.display = "none";
