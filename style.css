@@ -125,3 +125,18 @@ body {
 .next-btn:hover {
     background-color: #04b5c5;
 }
+
+@media (max-width: 480px) {
+    * {
+    box-sizing: border-box;
+    margin: 5px;
+    padding: 10;
+}
+    .titel-container p {
+        text-align: center;
+    }
+
+    .end-titel{
+        font-size: 25px;
+    }
+}

@@ -38,6 +38,7 @@ const quizContainer = document.getElementById("quiz-container");
 const quizQuestion = document.getElementById("question-titel");
 const endContainer = document.getElementById("end");
 const scoreSpan = document.getElementById("score");
+const titelContainer = document.getElementById("titel-container");
 
 
 const quizQuestions = [...questions]
@@ -78,6 +79,7 @@ function generateQuestion() {
             nextButton.addEventListener("click", () => {
                 quizContainer.style.display = "none";
                 endContainer.style.display = "block";
+                titelContainer.style.display = "none";
                 scoreSpan.innerText = `${rightAnswers.length}`
             })
         }
