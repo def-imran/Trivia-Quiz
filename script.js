@@ -61,7 +61,7 @@ function generateQuestion() {
 
     const buttons = document.querySelectorAll(".btn");
     buttons.forEach(function(button){
-        buttons.addEventListener("click", checkAnswer(button));
+        button.addEventListener("click", () => checkAnswer(button, answer));
     });
 
     if (quizQuestions.length === 0){
@@ -73,8 +73,16 @@ function generateQuestion() {
 }
 
 
-function checkAnswer(button){
-    
+function checkAnswer(button, answer){
+    if (button.innerText === answer){
+        button.style.backgroundColor = "green"
+        button.style.color = "white"
+    }
+
+    else{
+        button.style.backgroundColor = "red"
+        button.style.color = "white"
+    }
 }
 
 
