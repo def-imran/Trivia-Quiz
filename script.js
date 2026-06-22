@@ -40,7 +40,7 @@ const quizQuestion = document.getElementById("question-titel");
 const quizQuestions = [...questions]
 
 function generateQuestion() {
-    const randomIndex = Math.floor(Math.random() * questions.length);
+    const randomIndex = Math.floor(Math.random() * quizQuestions.length);
     const randomQuestion = quizQuestions.splice(randomIndex, 1)[0];
     const question = randomQuestion.question;
     const options = randomQuestion.options;
@@ -54,6 +54,11 @@ function generateQuestion() {
         <button class="btn">${options[2]}</button>
         <button class="btn">${options[3]}</button
     `
+
+    if (quizQuestions.length === 0){
+        nextButton.innerText = "End Quiz"
+    }
+
     startButton.style.display = "none";
     quizContainer.style.display = "block";
 }
